@@ -1,0 +1,114 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+    height: 84vh;
+    justify-content: center;
+    background: linear-gradient(to right, #ff7e5f, #feb47b), rgba(0, 0, 0, 0.5); /* Apply gradient with opacity */
+    background-blend-mode:lighten; /* Blend the gradient with the image */
+    background-position: center;
+    background-size: cover;
+}
+
+.home h1 {
+    font-size: 5em;
+    margin-bottom: 20px;
+    color: rgb(255, 252, 252);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.home h1 span {
+    display: inline-block;
+    transform: translateY(100px);
+    opacity: 0;
+    animation: slideIn 0.5s forwards, text3D 1s infinite;
+}
+
+.animated-p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+    animation-delay: 3s; /* Adjust this delay as needed */
+    font-weight: 600;
+}
+
+.animated-btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: #000000;
+    color: white;
+    border: 3px dashed #ffffff;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 20px;
+
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    animation: fadeInUp 1s forwards, bounce 1.5s infinite;
+    animation-delay: 4s; /* Adjust this delay as needed */
+}
+
+.animated-btn:hover {
+    background-color: #b53992;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes text3D {
+    0%, 100% {
+        text-shadow: 1px 1px 2px #000, 3px 3px 5px #333;
+    }
+    50% {
+        text-shadow: 2px 2px 4px #000, 4px 4px 8px #666;
+    }
+}
+
+@media (max-width: 600px) {
+    .home h1 {
+        font-size: 18px;
+    }
+    .animated-p {
+        font-size: 14px;
+    }
+}
