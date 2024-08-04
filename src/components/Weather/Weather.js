@@ -119,7 +119,7 @@ const Weather = ({isDark}) => {
     const [citiesWeatherData, setCitiesWeatherData] = useState([]);
 
 
-
+    console.log(weatherData)
 
 
     useEffect(() => {
@@ -133,6 +133,7 @@ const Weather = ({isDark}) => {
                     );
                     if (!response.ok) throw new Error(`Weather data for ${city} not found`);
                     return response.json();
+                    
                 });
                 const data = await Promise.all(promises);
                 setCitiesWeatherData(data);
